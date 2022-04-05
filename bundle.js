@@ -54,5 +54,8 @@
   console.log("The notes app is running");
   var model = new notesModel();
   model.addNote("Buy Milk");
+  model.addNote("Buy Chocolates");
+  var view = new notesView(model);
+  view.displayNotes();
   console.log(model.getNotes());
 })();
