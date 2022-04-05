@@ -1,4 +1,5 @@
 const notesModel = require('./notesModel');
+const notesView = require('./notesView');
 
 console.log('The notes app is running')
 

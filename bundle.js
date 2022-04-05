@@ -25,8 +25,32 @@
     }
   });
 
+  // notesView.js
+  var require_notesView = __commonJS({
+    "notesView.js"(exports, module) {
+      var model2 = require_notesView();
+      var notesView2 = class {
+        constructor(model_instance) {
+          this.instance = model_instance;
+          this.mainContainerEl = document.querySelector("#main-container");
+        }
+        displayNotes() {
+          const notes = this.instance.getNotes();
+          notes.forEach((note) => {
+            const noteEl = document.createElement("div");
+            noteEl.innerText = note;
+            noteEl.className = "note";
+            this.mainContainerEl.append(noteEl);
+          });
+        }
+      };
+      module.exports = notesView2;
+    }
+  });
+
   // index.js
   var notesModel = require_notesModel();
+  var notesView = require_notesView();
   console.log("The notes app is running");
   var model = new notesModel();
   model.addNote("Buy Milk");
