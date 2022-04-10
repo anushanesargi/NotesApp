@@ -42,6 +42,9 @@
           });
         }
         displayNotes() {
+          document.querySelectorAll(".note").forEach((element) => {
+            element.remove();
+          });
           const notes = this.instance.getNotes();
           notes.forEach((note) => {
             const noteEl = document.createElement("div");
