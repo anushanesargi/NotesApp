@@ -1,6 +1,7 @@
 class notesModel {
   constructor(){
     this.notesarray = [];
+    
   }
 
   getNotes() {

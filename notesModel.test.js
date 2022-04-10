@@ -1,3 +1,8 @@
+/**
+ * @jest-environment jsdom
+ */
+
+const fs = require('fs');
 const notesModel = require('./notesModel')
 
 describe('.getNotes', () => {
@@ -23,3 +28,4 @@ describe('.reset', () => {
     expect(model.getNotes()).toEqual([]);
   });
 });
+

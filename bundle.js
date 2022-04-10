@@ -33,6 +33,13 @@
         constructor(model_instance) {
           this.instance = model_instance;
           this.mainContainerEl = document.querySelector("#main-container");
+          this.buttonEl = document.querySelector("#add-note-button");
+          console.log(this.buttonEl);
+          this.inputEl = document.querySelector("#note-input");
+          this.buttonEl.addEventListener("click", () => {
+            this.instance.addNote(this.inputEl.value);
+            this.displayNotes();
+          });
         }
         displayNotes() {
           const notes = this.instance.getNotes();
@@ -53,9 +60,6 @@
   var notesView = require_notesView();
   console.log("The notes app is running");
   var model = new notesModel();
-  model.addNote("Buy Milk");
-  model.addNote("Buy Chocolates");
   var view = new notesView(model);
   view.displayNotes();
-  console.log(model.getNotes());
 })();

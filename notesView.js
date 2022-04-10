@@ -4,18 +4,14 @@ class notesView{
   constructor(model_instance){
     this.instance = model_instance;
     this.mainContainerEl = document.querySelector('#main-container');
+    this.buttonEl = document.querySelector('#add-note-button');
+    console.log(this.buttonEl);
+    this.inputEl = document.querySelector('#note-input');
+    this.buttonEl.addEventListener('click', () => {
+      this.instance.addNote(this.inputEl.value);
+      this.displayNotes();
+    });
   }
-
-  // displayNotes(){
-  //   const notes = this.instance.getNotes();
-
-  //   notes.forEach(ele => {
-  //     const divElement = document.createElement('div');
-  //     divElement.innerText = ele;
-  //     divElement.className = 'note';
-  //     this.mainContainerEl.append('divElement');
-  //   });
-  // }
 
   displayNotes() {
     const notes = this.instance.getNotes()
